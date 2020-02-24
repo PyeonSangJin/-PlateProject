@@ -1,0 +1,10 @@
+CREATE TABLE ACCESSLOG(
+UID int(11) NOT NULL AUTO_INCREMENT, -- 인덱스,
+  IPADDR varchar(20) DEFAULT NULL, -- ip주소,
+  ACCESSDATE char(10) NOT NULL DEFAULT '',  -- 날짜,
+  ACCESTIME varchar(12) NOT NULL, -- 시간,
+  USERID varchar(60) DEFAULT NULL, -- 유저ID,
+  HIT int(11) NOT NULL DEFAULT '0', -- 방문횟수,
+  PRIMARY KEY (UID),
+  KEY IPADDR (IPADDR)
+);

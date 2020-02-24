@@ -1,11 +1,11 @@
-var createError = require('http-errors');
-var cookieParser = require('cookie-parser');
-var express     = require('express');
-var app         = express();
-var logger      = require('morgan');
-var path        = require('path');
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
+const express     = require('express');
+const app         = express();
+const logger      = require('morgan');
+const path        = require('path');
 
-var port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var server = app.listen(port);
+let server = app.listen(port);
 server.timeout = 5000;
-var io = require('./app/routes')(app);
+let io = require('./app/routes')(app);
 app.set('socketio',io);
 
 // catch 404 and forward to error handler

@@ -9,7 +9,7 @@ module.exports = {
             pool.getConnection( (conn) => {
                 conn.query('CALL CREATE_ACCESSLOG(\''+ req.body.ipaddr+ '\', \'' + req.body.userId +'\', @_RESMSG);')
                 .then((results) => {
-                    console.log(results[1][0]);
+                   // console.log(results);
                     res.send(results[1][0])
                     conn.end();
                 })

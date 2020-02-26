@@ -2,7 +2,7 @@
 {
     public class Config
     {
-        public static readonly string MAIN_URL = "http://13.125.210.126:3001/api/pannel/info";
-        public static readonly string POST_REGISTER = "api/person/register/";
+        public static readonly string MAIN_URL = "http://192.168.0.7:3002";
+        public static readonly string POST_LOG = "/api/log/insertlog";
     }
 }

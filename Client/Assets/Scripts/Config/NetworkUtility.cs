@@ -4,11 +4,13 @@ using System.Net;
 using System.IO;
 using System.Text;
 using Assets.Scripts.Config;
+using Newtonsoft.Json.Linq;
+using System.Net.Sockets;
 
 public class NetworkUtility : MonoBehaviour
 {
-    static string MAIN_URL = Config.MAIN_URL;
-    static int timeout = 5;
+    readonly static string MAIN_URL = Config.MAIN_URL;
+    readonly static int timeout = 5;
 
     public string HTTP_GET(string URL_PATH)
     {
@@ -41,7 +43,7 @@ public class NetworkUtility : MonoBehaviour
         }
     }
 
-    public string HTTP_POST(string str, string URL_PATH)
+    public string HTTP_POST(JObject json, string URL_PATH)
     {
         System.Uri url = new System.Uri(MAIN_URL + URL_PATH);
         try
@@ -53,7 +55,7 @@ public class NetworkUtility : MonoBehaviour
             request.Timeout = timeout * 1000;
 
             request.ContentType = "application/json";
-            byte[] data = Encoding.UTF8.GetBytes(str); // 인코딩 설정
+            byte[] data = Encoding.UTF8.GetBytes(json.ToString()); // 인코딩 설정
             request.ContentLength = data.Length;
 
             Stream reqStream = request.GetRequestStream();
@@ -108,4 +110,21 @@ public class NetworkUtility : MonoBehaviour
             e.ToString();
         }
     }
+
+    public string GetLocalIP()
+    {
+        string localIP = "Unknown";
+        IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+        foreach (IPAddress ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                localIP = ip.ToString();
+                break;
+            }
+        }
+        return localIP;
+    }
+
+
 }

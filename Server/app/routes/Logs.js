@@ -4,7 +4,7 @@ var app = express();
 var LogController = require('../controller/LogController');
 
 module.exports = function(){
-    app.get('/log', LogController.getter);
+    app.post('/insertlog', LogController.insertLog);
 
     return app;
 }

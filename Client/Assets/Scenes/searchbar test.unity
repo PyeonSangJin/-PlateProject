@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37312, g: 0.38074034, b: 0.35872734, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,6 +250,8 @@ GameObject:
   - component: {fileID: 134312030}
   - component: {fileID: 134312029}
   - component: {fileID: 134312033}
+  - component: {fileID: 134312034}
+  - component: {fileID: 134312035}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -359,6 +361,30 @@ MonoBehaviour:
   scrollContentView: {fileID: 1988688614}
   contentDataPanel: {fileID: 7533565066587219200, guid: 959d900af20e50347922382b33cc2a3a,
     type: 3}
+--- !u!114 &134312034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134312028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c8e86cabb8c6b4c97c1cf1f766abd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &134312035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134312028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0d84f2eeef26f43ab1d082b6c8ebdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &136279709
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +536,7 @@ GameObject:
   - component: {fileID: 257274423}
   - component: {fileID: 257274425}
   - component: {fileID: 257274424}
+  - component: {fileID: 257274426}
   m_Layer: 5
   m_Name: background_image
   m_TagString: Untagged
@@ -572,6 +599,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257274422}
   m_CullTransparentMesh: 0
+--- !u!114 &257274426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257274422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7843023814547314a9738ccc9cabaf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458013124
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +623,6 @@ GameObject:
   - component: {fileID: 458013127}
   - component: {fileID: 458013126}
   - component: {fileID: 458013128}
-  - component: {fileID: 458013129}
   m_Layer: 5
   m_Name: btn_start
   m_TagString: Untagged
@@ -689,30 +727,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 458013126}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 458013129}
-        m_MethodName: HTTP_GET
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &458013129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458013124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb799e85b48e1744ba2890c5bc2d0482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls: []
 --- !u!1 &489754328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123271728}
   m_Layer: 5
-  m_Name: menu
+  m_Name: SearchEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

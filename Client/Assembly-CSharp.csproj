@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\init.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Menu_Listview.cs" />
+    <Compile Include="Assets\Scripts\PlateConfig.cs" />
+    <Compile Include="Assets\Scripts\SearchConfig.cs" />
     <Compile Include="Assets\Scripts\TRIE.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

@@ -249,7 +249,8 @@ GameObject:
   - component: {fileID: 134312031}
   - component: {fileID: 134312030}
   - component: {fileID: 134312029}
-  - component: {fileID: 134312033}
+  - component: {fileID: 134312036}
+  - component: {fileID: 134312034}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -342,7 +343,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &134312033
+--- !u!114 &134312034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -351,14 +352,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 134312028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546e6788c4709e84d944dc5b5fa49fb4, type: 3}
+  m_Script: {fileID: 11500000, guid: f3c8e86cabb8c6b4c97c1cf1f766abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winnerPop: {fileID: 1123271727}
-  noRecordLabel: {fileID: 1631712282}
-  scrollContentView: {fileID: 1988688614}
-  contentDataPanel: {fileID: 7533565066587219200, guid: 959d900af20e50347922382b33cc2a3a,
-    type: 3}
+--- !u!114 &134312036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134312028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7843023814547314a9738ccc9cabaf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &136279709
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +518,6 @@ GameObject:
   - component: {fileID: 257274423}
   - component: {fileID: 257274425}
   - component: {fileID: 257274424}
-  - component: {fileID: 257274426}
   m_Layer: 5
   m_Name: background_image
   m_TagString: Untagged
@@ -573,18 +580,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257274422}
   m_CullTransparentMesh: 0
---- !u!114 &257274426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257274422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7843023814547314a9738ccc9cabaf91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &458013124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1253,7 @@ GameObject:
   - component: {fileID: 999437090}
   - component: {fileID: 999437089}
   m_Layer: 5
-  m_Name: search
+  m_Name: tv_search
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2734,7 +2729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00034590054}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1988688616

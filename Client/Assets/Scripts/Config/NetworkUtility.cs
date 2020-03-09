@@ -7,7 +7,7 @@ using Assets.Scripts.Config;
 using Newtonsoft.Json.Linq;
 using System.Net.Sockets;
 
-public class NetworkUtility : MonoBehaviour
+public class NetworkUtility
 {
     readonly static string MAIN_URL = Config.MAIN_URL;
     readonly static int timeout = 5;

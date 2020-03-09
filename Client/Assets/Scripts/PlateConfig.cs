@@ -7,7 +7,8 @@ public class PlateConfig : MonoBehaviour
 {
     private Button side1, side2, side3;
     private Button bread, soup;
-    private GameObject searchEngine;
+
+    private SearchConfig Search;
 
     private void Awake()
     {
@@ -16,8 +17,8 @@ public class PlateConfig : MonoBehaviour
         side3 = GetComponent<Button>();
         bread = GetComponent<Button>();
         soup = GetComponent<Button>();
-        searchEngine = GameObject.Find("SearchEngine");
-        searchEngine.SetActive(false);
+
+        Search = this.gameObject.AddComponent<SearchConfig>(); //new SearchConfig();
     }
 
     void Start()
@@ -28,14 +29,10 @@ public class PlateConfig : MonoBehaviour
         bread =GameObject.Find("main").GetComponent<Button>();
         soup = GameObject.Find("soup").GetComponent<Button>();
 
-        side1.onClick.AddListener(delegate () { SearchEngine(); });
-        side2.onClick.AddListener(delegate () { SearchEngine(); });
-        side3.onClick.AddListener(delegate () { SearchEngine(); });
-        bread.onClick.AddListener(delegate () { SearchEngine(); });
-        soup.onClick.AddListener(delegate () { SearchEngine(); });
-    }
-
-    public void SearchEngine() {
-        searchEngine.SetActive(true);
+        side1.onClick.AddListener(delegate () { Search.Active(true); });
+        side2.onClick.AddListener(delegate () { Search.Active(true); });
+        side3.onClick.AddListener(delegate () { Search.Active(true); });
+        bread.onClick.AddListener(delegate () {Search.Active(true); });
+        soup.onClick.AddListener(delegate () { Search.Active(true); });
     }
 }

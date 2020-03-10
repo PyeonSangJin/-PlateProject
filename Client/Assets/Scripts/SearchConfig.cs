@@ -5,10 +5,7 @@ using System.Collections.Generic;
 
 public class SearchConfig : MonoBehaviour
 {
-    [SerializeField]
     private GameObject searchEngine;
-
-    [SerializeField]
     private InputField tv_search;
 
     private FoodData foodData;

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Assets.Scripts.Config
 {
@@ -16,18 +15,8 @@ namespace Assets.Scripts.Config
                    "김치찌게",
                    "돼지불고기",
                    "검은돼지불고기",
-
-                   //reverse
-                   //"백불지돼",
-                   //"게찌치김지돼",
-                   //"게찌치김",
-                   //"기고불지돼",
-                   //"기고불지돼은검"
             });
         }
-
-
-
 
     }
 }

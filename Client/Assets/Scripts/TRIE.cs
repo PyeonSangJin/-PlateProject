@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using Assets.Scripts.Config;
 
 public class TRIE
@@ -33,28 +32,44 @@ public class TRIE
 
     public Node Root = new Node();
 
+    private List<string> suffix(string str) {
+        List<string> ret = new List<string>();
+
+        for (int i = 0; i < str.Length; i++) {
+            ret.Add(str.Substring(i));
+        }
+
+        return ret;
+    }
 
     public void insert(List<string> words)
     {
         for (int w = 0; w < words.Count; w++)
         {
             var word = words[w];
-            var node = Root;
-            for (int len = 1; len <= word.Length; len++)
+
+            List<string> suf = suffix(word);
+            for (int i = 0; i < suf.Count; i++)
             {
-                var letter = word[len - 1];
-                Node next;
-                if (!node.Edges.TryGetValue(letter, out next))
+                word = suf[i];
+                var node = Root;
+
+                for (int len = 1; len <= word.Length; len++)
                 {
-                    next = new Node();
-                    if (len == word.Length)
+                    var letter = word[len - 1];
+                    Node next;
+                    if (!node.Edges.TryGetValue(letter, out next))
                     {
-                        next.Word = word;
+                        next = new Node();
+                        if (len == word.Length)
+                        {
+                            next.Word = word;
+                        }
+                        node.Edges.Add(letter, next);
                     }
-                    node.Edges.Add(letter, next);
+                    next.m_idx.Add(w);
+                    node = next;
                 }
-                next.m_idx.Add(w);
-                node = next;
             }
         }
     }

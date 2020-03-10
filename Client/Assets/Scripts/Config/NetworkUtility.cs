@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-using System.Net;
+﻿using System.Net;
 using System.IO;
 using System.Text;
 using Assets.Scripts.Config;

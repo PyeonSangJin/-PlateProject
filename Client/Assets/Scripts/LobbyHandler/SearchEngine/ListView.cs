@@ -14,9 +14,10 @@ public class Listview : MonoBehaviour
 
     private void Awake()
     {
-        noRecordLabel = gameObject.transform.GetChild(4).GetChild(2).GetComponent<Text>(); //NOTFOUND
-        scrollContentView = gameObject.transform.GetChild(4).GetChild(0).GetChild(0).GetChild(0); //Content
+        noRecordLabel = gameObject.transform.GetChild(5).GetChild(2).GetComponent<Text>(); //NOTFOUND
+        scrollContentView = gameObject.transform.GetChild(5).GetChild(0).GetChild(0).GetChild(0); //Content
         contentDataPanel = Resources.Load<GameObject>("Prefabs/lobby_list");
+        noRecordLabel.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, (float)(Screen.height / 32));
     }
     public void setParent(SearchConfig s) {
         parent = s;

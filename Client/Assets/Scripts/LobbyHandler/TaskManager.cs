@@ -36,6 +36,7 @@ namespace Assets.Scripts.LobbyHandler
             GameObject userImages = Instantiate(food);
             userImages.transform.SetParent(b_obj.transform);
             userImages.transform.localPosition = new Vector3(0, 0, 0);
+            userImages.transform.localScale = new Vector3(b_obj.GetComponent<RectTransform>().sizeDelta.x, b_obj.GetComponent<RectTransform>().sizeDelta.y, 1);
         }
 
 

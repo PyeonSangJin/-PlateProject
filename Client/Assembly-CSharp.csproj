@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\LobbyHandler\TaskManager.cs" />
      <Compile Include="Assets\Scripts\MainHandler\fortest.cs" />
      <Compile Include="Assets\Scripts\MainHandler\LoadBundle.cs" />
+     <Compile Include="Assets\Scripts\MainHandler\LoadFood.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

@@ -23,7 +23,7 @@ public class ScreenManager : MonoBehaviour
         side1 = GameObject.Find("side1");
         side2 = GameObject.Find("side2");
         side3 = GameObject.Find("side3");
-        main = GameObject.Find("main");
+        main = GameObject.Find("bread");
         soup = GameObject.Find("soup");
         insert_name = GameObject.Find("insert_name");
         btn_start = GameObject.Find("btn_start");

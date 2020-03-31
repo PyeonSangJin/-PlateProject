@@ -12,7 +12,7 @@ public class PlateConfig : MonoBehaviour
         side1 = GameObject.Find("side1").GetComponent<Button>();
         side2 = GameObject.Find("side2").GetComponent<Button>();
         side3 = GameObject.Find("side3").GetComponent<Button>();
-        bread = GameObject.Find("main").GetComponent<Button>();
+        bread = GameObject.Find("bread").GetComponent<Button>();
         soup = GameObject.Find("soup").GetComponent<Button>();
     }
 

@@ -3,13 +3,14 @@ using UnityEngine.Networking;
 using UnityEngine;
 using System.IO;
 
+using Assets.Scripts.Config;
+
 public class LoadBundle : MonoBehaviour
 {
-
     public string[] assetBundleNames;
 
     public IEnumerator SaveAssetBundleOnDisk() {
-        string uri = "file:///C:/Users/Coders1128/Desktop/AssetBundles/pplbundle";
+        string uri = Config.MAIN_URL + Config.GET_PPL;
 
         UnityWebRequest request = UnityWebRequest.Get(uri);
         yield return request.SendWebRequest();
@@ -21,15 +22,17 @@ public class LoadBundle : MonoBehaviour
         }
 
         FileStream fs = new FileStream(assetBundleDirectory + "/" + "pplbundle", System.IO.FileMode.Create);
-        fs.Write(request.downloadHandler.data, 0, (int)request.downloadedBytes);
+        //fs.Write(request.downloadHandler.data, 0, (int)request.downloadedBytes);
+
+        for (ulong i = 0; i < request.downloadedBytes; i++)
+        {
+            fs.WriteByte(request.downloadHandler.data[i]);
+            // 저장 진척도 표시
+            //if ((ulong)(((float)i/ (float)request.downloadedBytes) * 100) % 5 == 0 )
+            //    Debug.Log((((float)i / (float)request.downloadedBytes) * 100) + "%");
+        }
+
         fs.Close();
-
-        //for (ulong i = 0; i < request.downloadedBytes; i++)
-        //{
-        //    fs.WriteByte(request.downloadHandler.data[i]);
-        //    // 저장 진척도 표시
-        //}
-
         yield return LoadAssetFromLocalDisk();
     }
 
@@ -46,6 +49,7 @@ public class LoadBundle : MonoBehaviour
             Debug.Log("번들 로드 성공했숭 ㅎ");
         
 
+        //ppl 개수 , ppl gameobject 이름
         for (var i = 1; i <= 3; i++) {
             var prefab = myLoadedAssetBundle.LoadAsset<GameObject>("ppl" + i);
             Instantiate(prefab, new Vector3(0, 0, 15), Quaternion.identity);

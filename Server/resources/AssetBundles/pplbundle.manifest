@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 304801579
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 37156dafcd9539985b97c1409de46ad9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c1426fe5ecc2d3b4d3cd516ff577582d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Prefabs/ppl1.prefab
+- Assets/Resources/Prefabs/ppl2.prefab
+- Assets/Resources/Prefabs/ppl3.prefab
+Dependencies: []

@@ -4,7 +4,6 @@ var app = express();
 var BundleController = require('../controller/BundleController');
 
 module.exports = function(){
-    app.post('/', BundleController.get);
-
+    app.get('/:name', BundleController.get);
     return app;
 }

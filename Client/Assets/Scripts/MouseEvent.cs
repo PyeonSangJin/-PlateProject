@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class MouseEvent : MonoBehaviour
 {
-    public GameObject spoon;
-    Vector3 foodPos;
+    private Vector3 foodPos;
+    private int foodNum = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         foodPos = transform.position;
-
-        // instantiate prefab
-        spoon = Instantiate(Resources.Load<GameObject>("Prefabs/Spoon")) as GameObject;
-        spoon.transform.localPosition = new Vector3(foodPos.x - 0.8f, foodPos.y + 1.3f, foodPos.z + 1.1f);
-        spoon.SetActive(false);
-
-        DontDestroyOnLoad(spoon);
+        RecognizeFood();
     }
 
     // Update is called once per frame
@@ -25,8 +19,28 @@ public class MouseEvent : MonoBehaviour
     {
     }
 
-    void OnMouseDown()
+    private void RecognizeFood()
     {
-        spoon.SetActive(!spoon.activeSelf);
+        if (foodPos.z < -2f) // -2.5f
+        {
+            if (foodPos.x > 1f) // 1.2f
+                foodNum = 1;
+            else if (foodPos.x == 0)
+                foodNum = 2;
+            else // foodPos.x == -1.2f
+                foodNum = 3;
+        }
+        else // -1.5f
+        {
+            if (foodPos.x > 0)
+                foodNum = 4;
+            else
+                foodNum = 5;
+        }
+    }
+
+    public void OnMouseDown()
+    {
+        GameObject.Find("Kid").GetComponent<CharacterManager>().AnimEat(foodNum);
     }
 }

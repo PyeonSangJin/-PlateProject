@@ -45,7 +45,7 @@ public class SearchConfig : MonoBehaviour
     private void Start()
     {
         //inital
-        foodData = new FoodData();
+        foodData = FoodData.Instance;
         trie = new TRIE();
         root = trie.Root;
 
@@ -79,5 +79,4 @@ public class SearchConfig : MonoBehaviour
     {
         searchEngine.SetActive(flag);
     }
-
 }

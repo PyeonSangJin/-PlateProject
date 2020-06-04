@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Assets.Scripts
 {
-    class init : MonoBehaviour
+    class Init : MonoBehaviour
     {
         private NetworkUtility networkUtility;
 
@@ -17,6 +17,5 @@ namespace Assets.Scripts
             Debug.Log(json.ToString());
             Debug.Log(networkUtility.HTTP_POST(json, Config.Config.POST_LOG));
         }
-    
     }
 }

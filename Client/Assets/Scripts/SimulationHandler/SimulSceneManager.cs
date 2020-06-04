@@ -8,7 +8,6 @@ public class SimulSceneManager : MonoBehaviour
 {
     public static SimulSceneManager instance = null;
 
-    private SelectedFood sFood;
     private FoodTransform foodTr;
 
     private void Awake()
@@ -21,12 +20,10 @@ public class SimulSceneManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //DontDestroyOnLoad(gameObject);
     }
 
     private void LoadFood()
     {
-        //sFood = SelectedFood.getInstance();
         string curFood;
 
         for (int i = 0; i < 5; i++)
@@ -52,16 +49,10 @@ public class SimulSceneManager : MonoBehaviour
             }
         }
     }
-
-    private void LoadCharacter()
-    {
-        // character prefab load
-    }
-
+    
     public void LoadScene()
     {
         foodTr = new FoodTransform();
-        //LoadCharacter();
         LoadFood();
         SceneManager.LoadScene("Simulation");
     }

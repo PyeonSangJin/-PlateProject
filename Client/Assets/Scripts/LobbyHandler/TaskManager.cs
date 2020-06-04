@@ -44,7 +44,5 @@ namespace Assets.Scripts.LobbyHandler
 
             selectedFood.SetFood(b_obj.name, foodName);
         }
-
-
     }
 }

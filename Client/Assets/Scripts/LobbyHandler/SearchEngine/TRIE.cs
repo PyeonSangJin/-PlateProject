@@ -5,7 +5,7 @@ public class TRIE
 {
     public struct Letter
     {
-        public const string Chars =  FoodData.TrieChild;
+        public static readonly string Chars = FoodData.Instance.TrieChild;
         public static implicit operator Letter(char c)
         {
             return new Letter() { Index = Chars.IndexOf(c) };

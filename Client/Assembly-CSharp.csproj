@@ -61,7 +61,7 @@
      <Compile Include="Assets\Scripts\Config\FoodData.cs" />
      <Compile Include="Assets\Scripts\Config\FoodTransform.cs" />
      <Compile Include="Assets\Scripts\Config\NetworkUtility.cs" />
-     <Compile Include="Assets\Scripts\init.cs" />
+     <Compile Include="Assets\Scripts\Init.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\PlateConfig.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\ScreenManager.cs" />

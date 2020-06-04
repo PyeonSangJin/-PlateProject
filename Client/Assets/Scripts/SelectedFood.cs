@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-// Entity Class
-
+﻿// Entity Class
 namespace Assets.Scripts
 {
     public class SelectedFood

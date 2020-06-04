@@ -55,11 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CharacterManager.cs" />
      <Compile Include="Assets\Scripts\Config\BuildAssetBundles.cs" />
      <Compile Include="Assets\Scripts\Config\Config.cs" />
      <Compile Include="Assets\Scripts\Config\FoodData.cs" />
+     <Compile Include="Assets\Scripts\Config\FoodTransform.cs" />
      <Compile Include="Assets\Scripts\Config\NetworkUtility.cs" />
-     <Compile Include="Assets\Scripts\init.cs" />
+     <Compile Include="Assets\Scripts\Init.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\PlateConfig.cs" />
      <Compile Include="Assets\Scripts\LobbyHandler\ScreenManager.cs" />
@@ -69,33 +71,35 @@
      <Compile Include="Assets\Scripts\LobbyHandler\TaskManager.cs" />
      <Compile Include="Assets\Scripts\MainHandler\fortest.cs" />
      <Compile Include="Assets\Scripts\MainHandler\LoadBundle.cs" />
-     <Compile Include="Assets\Scripts\MainHandler\LoadFood.cs" />
+     <Compile Include="Assets\Scripts\MouseEvent.cs" />
+     <Compile Include="Assets\Scripts\SelectedFood.cs" />
+     <Compile Include="Assets\Scripts\SimulationHandler\SimulSceneManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -269,13 +273,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/Coders1128/Desktop/project/-PlateProject/Client/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Common">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ <HintPath>C:/Users/Me/Desktop/inital/Client/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.21f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

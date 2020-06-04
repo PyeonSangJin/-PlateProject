@@ -9,6 +9,7 @@ namespace Assets.Scripts.LobbyHandler
         private Listview listview;
         private SearchConfig searchConfig;
         private ChangeScene changeScene;
+        private SelectedFood selectedFood;
 
         private Button b_obj;
         private GameObject food;
@@ -18,6 +19,7 @@ namespace Assets.Scripts.LobbyHandler
             listview = gameObject.AddComponent<Listview>();
             searchConfig = gameObject.AddComponent<SearchConfig>();
             changeScene = gameObject.AddComponent<ChangeScene>();
+            selectedFood = SelectedFood.getInstance();
 
             searchConfig.setListview(listview, searchConfig, this);
             plateConfig.PlateButtonListener(searchConfig, this);
@@ -40,9 +42,7 @@ namespace Assets.Scripts.LobbyHandler
             userImages.transform.localPosition = new Vector3(0, 0, 0);
             userImages.transform.localScale = new Vector3(b_obj.GetComponent<RectTransform>().sizeDelta.x, b_obj.GetComponent<RectTransform>().sizeDelta.y, 1);
 
-            changeScene.SetFood(b_obj.name, foodName);
+            selectedFood.SetFood(b_obj.name, foodName);
         }
-
-
     }
 }

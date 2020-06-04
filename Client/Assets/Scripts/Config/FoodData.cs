@@ -4,10 +4,13 @@ namespace Assets.Scripts.Config
 {
     class FoodData
     {
-        public const string TrieChild = "돼지불백김치찌게고기검은";
+        private static readonly System.Lazy<FoodData> instance
+            = new System.Lazy<FoodData>(() => new FoodData());
+
+        public readonly string TrieChild = "돼지불백김치찌게고기검은";
         public List<string> words;
 
-        public FoodData()
+        private FoodData()
         {
             words = new List<string>(new string[] {
                    "돼지불백",
@@ -18,5 +21,9 @@ namespace Assets.Scripts.Config
             });
         }
 
+        public static FoodData Instance
+        {
+            get { return instance.Value; }
+        }
     }
 }

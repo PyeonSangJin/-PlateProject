@@ -11,10 +11,4 @@ public class fortest : MonoBehaviour
         loadBundle = gameObject.AddComponent<LoadBundle>();
         StartCoroutine(loadBundle.SaveAssetBundleOnDisk());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 //1440 2560
@@ -73,7 +71,5 @@ public class ScreenManager : MonoBehaviour
         //s.offsetMax = new Vector2(s.offsetMax.x, -(float)(Screen.height / 4.3)); //top
         //s.offsetMin = new Vector2(s.offsetMin.x, (float)(Screen.height / 4.3+ Screen.height / 9.6 / 2)); //bottom
         //= new RectOffset((int)(Screen.width / 8.7), (int)(Screen.width / 8.7), (int)(Screen.height / 8.7), (int)(Screen.height / 8.7));
-
     }
-
 }

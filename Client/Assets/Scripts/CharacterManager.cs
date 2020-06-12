@@ -7,32 +7,30 @@ public class CharacterManager : MonoBehaviour
     private GameObject foodnameField;
 
     private UnityEngine.UI.Text eatingFoodname;
-
     private Animator anim;
-    private AudioSource[] audioSc;
+    private AudioSource audioSc;
+    private AudioClip[] foodWordsVoice, fineVoice, encourageVoice;
+
     private List<string> foodWords;
-    private int audioScSize;
 
     // Start is called before the first frame update
     void Start()
     {
-        UnityEngine.Random.InitState((int)(Time.realtimeSinceStartup * 100f));
+        Random.InitState((int)(Time.realtimeSinceStartup * 100f));
 
         foodnameField = Instantiate(Resources.Load<GameObject>("Prefabs/foodnameField"));
         eatingFoodname = foodnameField.transform.GetChild(0).GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>();
         foodnameField.SetActive(false);
-        //DontDestroyOnLoad(foodnameField);
 
         anim = GetComponent<Animator>();
+        audioSc = gameObject.AddComponent<AudioSource>();
         foodWords = Assets.Scripts.Config.FoodData.Instance.words;
 
-        audioSc = new AudioSource[audioScSize = foodWords.Count + 2];
-        for (int i = 0; i < audioScSize; i++)
-            audioSc[i] = gameObject.AddComponent<AudioSource>();
-        for (int i = 0; i < foodWords.Count; i++)
-            audioSc[i].clip = Resources.Load<AudioClip>("Voice/" + foodWords[i]);
-        audioSc[foodWords.Count].clip = Resources.Load<AudioClip>("Voice/reallyDelicious");
-        audioSc[foodWords.Count + 1].clip = Resources.Load<AudioClip>("Voice/tasteIsBest");
+        foodWordsVoice = new AudioClip[foodWords.Count];
+        for (int i = 0; i < foodWordsVoice.Length; i++)
+            foodWordsVoice[i] = Resources.Load<AudioClip>("Voice/foodWords/" + foodWords[i]);
+        fineVoice = Resources.LoadAll<AudioClip>("Voice/fine");
+        encourageVoice = Resources.LoadAll<AudioClip>("Voice/encouragement");
     }
 
     private IEnumerator OneshotAnim()
@@ -53,7 +51,7 @@ public class CharacterManager : MonoBehaviour
 
     public void PlayEatAnim(int foodId, int foodLoc)
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || audioSc.isPlaying)
             return;
 
         // 애니메이션 실행
@@ -81,14 +79,23 @@ public class CharacterManager : MonoBehaviour
         StartCoroutine(OneshotAnim());
 
         // 소리 출력
-        if (UnityEngine.Random.Range(0, 11) <= 7) // 70% 음식 이름 소리 출력
-            audioSc[foodId].Play();
-        else // 30% 식사 독려 소리 출력
-            audioSc[UnityEngine.Random.Range(5, 7)].Play();
+        if (Random.Range(0, 11) <= 7) // 70% 음식 이름 소리 출력
+            audioSc.PlayOneShot(foodWordsVoice[foodId]);
+        else // 30% 감탄 소리 출력
+            audioSc.PlayOneShot(fineVoice[Random.Range(0, fineVoice.Length)]);
 
         // 음식 이름 출력
         eatingFoodname.text = foodWords[foodId];
         foodnameField.SetActive(true);
         Invoke("OffFoodnameField", 2);
+    }
+
+    public void OnMouseDown()
+    {
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || audioSc.isPlaying)
+            return;
+
+        // 식사 격려 소리 출력
+        audioSc.PlayOneShot(encourageVoice[Random.Range(0, encourageVoice.Length)]);
     }
 }
